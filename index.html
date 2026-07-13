@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Smama Noor — Full Stack Developer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600;700;800&family=Poppins:wght@300;400;500;600&family=JetBrains+Mono:wght@500;700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- ── NAVBAR ── -->
+  <nav id="navbar">
+    <a class="logo" href="#">Smama<span>.</span></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#mini">Mini Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="hamburger" id="hamburger">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <!-- ── HOME ── -->
+  <section id="home">
+    <!-- decorative constellation / system-graph art -->
+    <svg class="hero-graph" viewBox="0 0 600 700" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <g class="graph-lines">
+        <line x1="90" y1="120" x2="230" y2="200" />
+        <line x1="230" y1="200" x2="180" y2="330" />
+        <line x1="230" y1="200" x2="380" y2="150" />
+        <line x1="180" y1="330" x2="90" y2="420" />
+        <line x1="180" y1="330" x2="320" y2="400" />
+        <line x1="380" y1="150" x2="480" y2="250" />
+        <line x1="320" y1="400" x2="480" y2="250" />
+        <line x1="320" y1="400" x2="250" y2="540" />
+        <line x1="250" y1="540" x2="380" y2="610" />
+        <line x1="90" y1="420" x2="130" y2="560" />
+        <line x1="480" y1="250" x2="520" y2="400" />
+        <line x1="520" y1="400" x2="380" y2="610" />
+      </g>
+      <g class="graph-nodes">
+        <circle cx="90" cy="120" r="5" />
+        <circle cx="230" cy="200" r="7" />
+        <circle cx="380" cy="150" r="5" />
+        <circle cx="180" cy="330" r="6" />
+        <circle cx="480" cy="250" r="6" />
+        <circle cx="320" cy="400" r="8" />
+        <circle cx="90" cy="420" r="5" />
+        <circle cx="250" cy="540" r="6" />
+        <circle cx="520" cy="400" r="5" />
+        <circle cx="130" cy="560" r="4" />
+        <circle cx="380" cy="610" r="6" />
+      </g>
+    </svg>
+
+    <div class="home-wrap">
+      <div class="home-left">
+        <p class="home-greeting">Hello, I'm</p>
+        <h1 class="home-name">Smama Noor</h1>
+        <h2 class="home-role">And I'm a <span id="typed-text"></span><span class="cursor">|</span></h2>
+        <p class="home-bio">A motivated and detail-oriented Full Stack Developer passionate about turning design ideas
+          into clean, functional, fast and fully responsive web experiences — from pixel-perfect frontends to scalable
+          Node.js/Express backends.</p>
+        <div class="home-socials">
+          <a href="https://linkedin.com" target="_blank" class="social-btn" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z" />
+              <circle cx="4" cy="4" r="2" />
+            </svg>
+          </a>
+          <a href="https://github.com/smamanoor79-stack" target="_blank" class="social-btn" aria-label="GitHub">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <path
+                d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22" />
+            </svg>
+          </a>
+        </div>
+        <div class="home-btns">
+          <a href="#projects" class="btn-primary">View My Work</a>
+          <a href="assets/Smama_Noor_CV.pdf" class="btn-outline" download>Download CV ↓</a>
+        </div>
+      </div>
+
+      <div class="home-right">
+        <div class="photo-frame">
+          <div class="photo-frame-inner">
+            <img src="assets/profile.jpeg" alt="Smama Noor"
+              onerror="this.parentElement.classList.add('no-img'); this.style.display='none';" />
+            <div class="photo-fallback">SN</div>
+          </div>
+          <span class="frame-tag">&lt;FullStack/&gt;</span>
+        </div>
+      </div>
+    </div>
+
+    <a href="#about" class="scroll-down">
+      <span>↓</span>
+      <p>Scroll Down</p>
+    </a>
+  </section>
+
+
+  <!-- ── ABOUT ── -->
+  <section id="about">
+    <div class="section-header reveal">
+      <p class="section-tag">Get To Know Me</p>
+      <h2 class="section-title">About <span>Me</span></h2>
+    </div>
+    <div class="about-grid about-no-img">
+      <div class="about-content reveal">
+        <h3>I'm a <span>Full Stack Developer</span></h3>
+        <p>I'm a motivated and detail-oriented Full Stack Developer based in Haroonabad, Punjab, Pakistan. I completed a
+          comprehensive Web Development Bootcamp at Incubee, Bahawalpur — covering everything from HTML & CSS to full
+          WordPress deployment.</p>
+        <p>With an academic background in MS-Biochemistry, I bring strong analytical thinking and attention to detail
+          to every project. I build complete end-to-end web applications — from responsive frontends to
+          Node.js/Express backends with MongoDB, REST APIs, and Cloudinary integrations.</p>
+        <div class="about-info">
+          <div class="info-item"><span class="info-label">Name</span><span class="info-val">Smama Noor</span></div>
+          <div class="info-item"><span class="info-label">Email</span><span
+              class="info-val">smamanoor79@gmail.com</span></div>
+          <div class="info-item"><span class="info-label">Location</span><span class="info-val">Haroonabad, Punjab,
+              PK</span></div>
+          <div class="info-item"><span class="info-label">Available</span><span class="info-val available">Open to
+              Opportunities</span></div>
+        </div>
+        <a href="#contact" class="btn-primary" style="display:inline-block; margin-top:1.5rem;">Let's Talk</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SKILLS ── -->
+  <section id="skills">
+    <div class="section-header reveal">
+      <p class="section-tag">What I Know</p>
+      <h2 class="section-title">My <span>Skills</span></h2>
+    </div>
+    <div class="skills-grid">
+      <div class="skill-card reveal">
+        <div class="skill-card-icon">🏗️</div>
+        <h3>Frontend</h3>
+        <ul>
+          <li>HTML5 & Semantic Markup</li>
+          <li>CSS3, Flexbox & Grid</li>
+          <li>JavaScript ES6+</li>
+          <li>DOM Manipulation</li>
+          <li>Responsive Web Design</li>
+          <li>React.js</li>
+          <li>Tailwind CSS</li>
+        </ul>
+      </div>
+      <div class="skill-card reveal">
+        <div class="skill-card-icon">⚙️</div>
+        <h3>Backend</h3>
+        <ul>
+          <li>Node.js & Express.js</li>
+          <li>REST APIs</li>
+          <li>MongoDB & Mongoose</li>
+          <li>JWT Authentication</li>
+          <li>Cloudinary Integration</li>
+        </ul>
+      </div>
+      <div class="skill-card reveal">
+        <div class="skill-card-icon">📐</div>
+        <h3>Frameworks & Tools</h3>
+        <ul>
+          <li>Bootstrap 5</li>
+          <li>Vite</li>
+          <li>Figma to Code</li>
+          <li>Git & GitHub</li>
+          <li>Postman</li>
+        </ul>
+      </div>
+      <div class="skill-card reveal">
+        <div class="skill-card-icon">🛒</div>
+        <h3>WordPress</h3>
+        <ul>
+          <li>WordPress CMS</li>
+          <li>WooCommerce</li>
+          <li>Elementor Builder</li>
+          <li>Plugin Integration</li>
+          <li>Store Management</li>
+        </ul>
+      </div>
+      <div class="skill-card reveal">
+        <div class="skill-card-icon">🌟</div>
+        <h3>Soft Skills</h3>
+        <ul>
+          <li>Detail-Oriented</li>
+          <li>Team Collaborator</li>
+          <li>Creative Problem Solver</li>
+          <li>Deadline-Driven</li>
+          <li>Continuous Learner</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ── SERVICES ── -->
+  <section id="services">
+    <div class="section-header reveal">
+      <p class="section-tag">What I Offer</p>
+      <h2 class="section-title">My <span>Services</span></h2>
+      <p class="section-sub reveal">Here's exactly what you get when you work with me.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card reveal">
+        <div class="service-num">01</div>
+        <div class="service-icon">💻</div>
+        <h3>Custom Website Development</h3>
+        <p>A fully responsive website built for your business — mobile, tablet, and desktop ready. Coded from scratch,
+          no generic templates.</p>
+        <a href="#contact" class="service-link">Get Started →</a>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-num">02</div>
+        <div class="service-icon">🛒</div>
+        <h3>WordPress Website / Online Store</h3>
+        <p>A complete WordPress website or WooCommerce store — custom theme, product setup, payment-ready, and easy
+          for you to update yourself.</p>
+        <a href="#contact" class="service-link">Get Started →</a>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-num">03</div>
+        <div class="service-icon">⚙️</div>
+        <h3>Backend & API Development</h3>
+        <p>Need a login system, database, or custom functionality? I build secure backends with Node.js, Express, and
+          MongoDB.</p>
+        <a href="#contact" class="service-link">Get Started →</a>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-num">04</div>
+        <div class="service-icon">🔗</div>
+        <h3>Third-Party Integrations</h3>
+        <p>Payment gateways, image uploads (Cloudinary), Google Maps, or any external service — integrated smoothly
+          into your website.</p>
+        <a href="#contact" class="service-link">Get Started →</a>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-num">05</div>
+        <div class="service-icon">🛠️</div>
+        <h3>Website Maintenance & Support</h3>
+        <p>After launch, I'm still here — bug fixes, new features, and content updates whenever you need them.</p>
+        <a href="#contact" class="service-link">Get Started →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── PROJECTS ── -->
+  <section id="projects">
+    <div class="section-header reveal">
+      <p class="section-tag">What I've Built</p>
+      <h2 class="section-title">Featured <span>Projects</span></h2>
+    </div>
+
+    <!-- Masonry-style showcase list -->
+    <div class="showcase-grid" id="projectsGrid">
+
+      <a class="showcase-item reveal" href="https://nurfiastore.vercel.app/" target="_blank">
+        <div class="showcase-img">
+          <img src="project4.png" alt="Nurfia Screenshot"
+            onerror="this.parentElement.classList.add('fallback'); this.style.display='none'; this.parentElement.innerHTML += '<span class=proj-emoji>👗</span>';" />
+        </div>
+        <h3>Nurfia — Full Stack Fashion Store</h3>
+        <p class="showcase-cat">Full Stack · MERN</p>
+      </a>
+
+      <a class="showcase-item reveal" href="https://semantiq-hub-frontend.vercel.app/" target="_blank">
+        <div class="showcase-img">
+          <img src="project1.jpeg" alt="SemantiQhub Screenshot"
+            onerror="this.parentElement.classList.add('fallback'); this.style.display='none'; this.parentElement.innerHTML += '<span class=proj-emoji>🤖</span>';" />
+        </div>
+        <h3>SemantiQhub — Landing Page</h3>
+        <p class="showcase-cat">Figma to Code</p>
+      </a>
+
+      <a class="showcase-item reveal" href="https://mantu-ecommerce.vercel.app/" target="_blank">
+        <div class="showcase-img">
+          <img src="project2.jpeg" alt="Mantu E-Commerce Screenshot"
+            onerror="this.parentElement.classList.add('fallback'); this.style.display='none'; this.parentElement.innerHTML += '<span class=proj-emoji>🛍️</span>';" />
+        </div>
+        <h3>Mantu — E-Commerce</h3>
+        <p class="showcase-cat">Bootstrap · 7 Pages</p>
+      </a>
+
+      <a class="showcase-item reveal" href="" target="_blank">
+        <div class="showcase-img">
+          <img src="project5.jpeg" alt="Doctor Booking site secreenshot"
+            onerror="this.parentElement.classList.add('fallback'); this.style.display='none'; this.parentElement.innerHTML += '<span class=proj-emoji>🛒</span>';" />
+        </div>
+        <h3>Doctor Booking Appointment site — Coming Soon</h3>
+        <p class="showcase-cat"> React. Express.js. TailwindCSS</p>
+      </a>
+
+      <a class="showcase-item reveal" href="https://landlinger-landingpage.vercel.app/" target="_blank">
+        <div class="showcase-img">
+          <img src="landing2.png" alt="Netflix Clone Screenshot"
+            onerror="this.parentElement.classList.add('fallback'); this.style.display='none'; this.parentElement.innerHTML += '<span class=proj-emoji>🎬</span>';" />
+        </div>
+        <h3>Landlinger — Landingpage</h3>
+        <p class="showcase-cat"> React. Tailwind CSS</p>
+      </a>
+
+      <a class="showcase-item reveal" href="https://smama.maxionshop.com/?" target="_blank">
+        <div class="showcase-img">
+          <img src="project3.jpeg" alt="WordPress Store Screenshot"
+            onerror="this.parentElement.classList.add('fallback'); this.style.display='none'; this.parentElement.innerHTML += '<span class=proj-emoji>🌐</span>';" />
+        </div>
+        <h3>WordPress Store</h3>
+        <p class="showcase-cat">WooCommerce · Elementor</p>
+      </a>
+
+    </div>
+
+    <div class="services-cta reveal">
+      <p>Have a project in mind that's not listed here?</p>
+      <a href="#contact" class="btn-primary">Let's Discuss Your Project</a>
+    </div>
+
+  </section>
+
+  <!-- ── MINI PROJECTS ── -->
+  <section id="mini">
+    <div class="section-header reveal">
+      <p class="section-tag">Practice & Growth</p>
+      <h2 class="section-title">Mini <span>Projects</span></h2>
+      <p class="section-sub reveal">Built to sharpen core HTML, CSS & JavaScript fundamentals through hands-on
+        practice.
+      </p>
+    </div>
+    <div class="mini-grid" id="miniGrid">
+      <!-- Populated by JS -->
+    </div>
+  </section>
+
+     <!-- ── MARQUEE STRIP ── -->
+  <div class="marquee">
+    <div class="marquee-track">
+      <span>MERN STACK</span><span>•</span>
+      <span>FULL STACK DEVELOPER</span><span>•</span>
+      <span>REACT.JS</span><span>•</span>
+      <span>NODE.JS</span><span>•</span>
+      <span>EXPRESS.JS</span><span>•</span>
+      <span>MONGODB</span><span>•</span>
+      <span>SCALABLE WEB APPS</span><span>•</span>
+      <span>WORDPRESS</span><span>•</span>
+      <span>MERN STACK</span><span>•</span>
+      <span>FULL STACK DEVELOPER</span><span>•</span>
+      <span>REACT.JS</span><span>•</span>
+      <span>NODE.JS</span><span>•</span>
+      <span>EXPRESS.JS</span><span>•</span>
+      <span>MONGODB</span><span>•</span>
+      <span>SCALABLE WEB APPS</span><span>•</span>
+      <span>WORDPRESS</span><span>•</span>
+    </div>
+  </div>
+
+  <!-- ── CONTACT ── -->
+  <section id="contact">
+    <div class="section-header reveal">
+      <p class="section-tag">Get In Touch</p>
+      <h2 class="section-title">Contact <span>Me</span></h2>
+    </div>
+    <div class="contact-wrapper">
+      <div class="contact-info reveal">
+        <h3>Let's Work Together</h3>
+        <p>I'm looking for opportunities that allow productivity and growth. Whether you have a project in mind or
+          just want to say hello — my inbox is always open!</p>
+        <div class="contact-items">
+          <div class="contact-item">
+            <div class="ci-icon">📧</div>
+            <div>
+              <span class="ci-label">Email</span>
+              <a href="mailto:smamanoor79@gmail.com" class="ci-val">smamanoor79@gmail.com</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="ci-icon">📍</div>
+            <div>
+              <span class="ci-label">Location</span>
+              <span class="ci-val">Haroonabad, Punjab, Pakistan</span>
+            </div>
+          </div>
+        </div>
+        <div class="contact-socials">
+          <a href="https://linkedin.com" target="_blank" class="social-btn">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z" />
+              <circle cx="4" cy="4" r="2" />
+            </svg>
+          </a>
+          <a href="https://github.com/smamanoor79-stack" target="_blank" class="social-btn">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22" />
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <form class="contact-form reveal" id="contactForm" name="contact" netlify netlify-honeypot="bot-field">
+
+        <input type="hidden" name="form-name" value="contact" />
+        <p class="hidden"><label>Don't fill this out: <input name="bot-field" /></label></p>
+
+        <div class="form-group">
+          <input type="text" id="fname" name="name" placeholder="Your Name" required />
+          <span class="form-error" id="nameErr"></span>
+        </div>
+        <div class="form-group">
+          <input type="email" id="femail" name="email" placeholder="Your Email" required />
+          <span class="form-error" id="emailErr"></span>
+        </div>
+        <div class="form-group">
+          <input type="text" id="fsubject" name="subject" placeholder="Subject" required />
+        </div>
+        <div class="form-group">
+          <textarea id="fmessage" name="message" rows="3" placeholder="Your Message" required></textarea>
+          <span class="form-error" id="msgErr"></span>
+        </div>
+        <button type="submit" class="btn-primary submit-btn">Send Message ✉</button>
+        <p class="form-success" id="formSuccess"></p>
+      </form>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer>
+    <p>Designed & Built by <span>Smama Noor</span> · 2026</p>
+    <p class="footer-sub">Full Stack Developer · WordPress Developer</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
