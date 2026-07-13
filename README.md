@@ -43,9 +43,8 @@ Portfolio-main/
   index.html
   style.css
   script.js
-  assets/
-    profile.jpeg
-    Smama_Noor_CV.pdf
+  profile.jpeg
+  Smama_Noor_CV.pdf
   project1.jpeg
   project2.jpeg
   project3.jpeg
