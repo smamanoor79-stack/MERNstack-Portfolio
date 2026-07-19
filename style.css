@@ -772,10 +772,9 @@ section {
   font-size: .88rem;
   color: var(--muted);
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: .6rem;
 }
-
 .skill-card ul li::before {
   content: '';
   width: 6px;
@@ -783,6 +782,7 @@ section {
   border-radius: 50%;
   background: var(--teal);
   flex-shrink: 0;
+  margin-top: 7px;
 }
 
 /* ── SERVICES ── */
@@ -1387,8 +1387,15 @@ footer span {
 
   .about-card-val {
     font-size: 1rem;
+  } 
+}
+@media (max-width: 768px) {
+  .home-right {
+    display: none !important;
   }
-
-  
-  
+}
+@media (max-width: 600px) {
+  .home-right {
+    display: none !important;
+  }
 }

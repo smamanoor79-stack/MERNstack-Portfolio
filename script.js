@@ -23,6 +23,7 @@ document.querySelectorAll('.nav-links a').forEach(link => {
 
 // ── 3. TYPING ANIMATION ──
 const roles = [
+  'Full Stack Developer',
   'MERN Stack Developer',
   'WordPress Developer',
   'UI/UX Enthusiast',
