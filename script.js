@@ -6,7 +6,7 @@ window.addEventListener('scroll', () => {
 
 // ── 2. HAMBURGER MENU ──
 const hamburger = document.getElementById('hamburger');
-const navLinks  = document.getElementById('navLinks');
+const navLinks = document.getElementById('navLinks');
 
 hamburger.addEventListener('click', () => {
   hamburger.classList.toggle('open');
@@ -30,9 +30,9 @@ const roles = [
   'Problem Solver'
 ];
 let roleIndex = 0;
-let charIndex  = 0;
+let charIndex = 0;
 let isDeleting = false;
-const typedEl  = document.getElementById('typed-text');
+const typedEl = document.getElementById('typed-text');
 
 function type() {
   const currentRole = roles[roleIndex];
@@ -89,38 +89,6 @@ window.addEventListener('scroll', () => {
   });
 });
 
-// ── 6. MINI PROJECTS GRID ──
-
-  const miniProjects = [
-  { icon: '⏱️', name: 'Stopwatch',      tech: 'HTML · CSS · JS', demo: 'https://smamanoor79-stack.github.io/Stopwatch/', github: 'https://github.com/smamanoor79-stack/Stopwatch' },
-  { icon: '🧮', name: 'Calculator',     tech: 'HTML · CSS · JS', demo: 'https://smamanoor79-stack.github.io/Calculator/', github: 'https://github.com/smamanoor79-stack/Calculator' },
-  { icon: '🔢', name: 'Counter',        tech: 'HTML · CSS · JS', demo: 'https://smamanoor79-stack.github.io/Counter/', github: 'https://github.com/smamanoor79-stack/Counter' },
-  { icon: '✅', name: 'To-Do App',      tech: 'HTML · CSS · JS', demo: ' https://smamanoor79-stack.github.io/To-Do-App/', github: 'https://github.com/smamanoor79-stack/To-Do-App' },
-  { icon: '📋', name: 'Form Validator', tech: 'HTML · CSS · JS', demo: 'https://smamanoor79-stack.github.io/Form-Validator/', github: 'https://github.com/smamanoor79-stack/Form-Validator' },
-  { icon: '🌤️', name: 'Weather App',   tech: 'HTML · CSS · JS', demo: 'https://smamanoor79-stack.github.io/Weather-App/', github: 'https://github.com/smamanoor79-stack/Weather-App' },
-];
-
-const miniGrid = document.getElementById('miniGrid');
-
-miniProjects.forEach((project, i) => {
-  const card = document.createElement('div');
-  card.className = 'mini-card reveal';
-  card.style.transitionDelay = `${i * 55}ms`;
-  card.innerHTML = `
-    <div class="mini-img">
-      <span class="mini-icon">${project.icon}</span>
-      <div class="project-overlay">
-        <a href="${project.demo}" target="_blank" class="proj-link">Live Demo ↗</a>
-        <a href="${project.github}" target="_blank" class="proj-link ghost">GitHub ↗</a>
-      </div>
-    </div>
-    <p class="mini-name">${project.name}</p>
-    <p class="mini-tech">${project.tech}</p>
-  `;
-  miniGrid.appendChild(card);
-  revealObserver.observe(card);
-});
-
 // ── 7. CONTACT FORM VALIDATION ──
 const form = document.getElementById('contactForm');
 const WEB3FORMS_ACCESS_KEY = '75fbd070-f316-48a3-9e71-7a0289e43e52';
@@ -128,15 +96,15 @@ const WEB3FORMS_ACCESS_KEY = '75fbd070-f316-48a3-9e71-7a0289e43e52';
 form.addEventListener('submit', async (e) => {
   e.preventDefault();
 
-  const name    = document.getElementById('fname').value.trim();
-  const email   = document.getElementById('femail').value.trim();
+  const name = document.getElementById('fname').value.trim();
+  const email = document.getElementById('femail').value.trim();
+  const subject = document.getElementById('fsubject').value.trim();
   const message = document.getElementById('fmessage').value.trim();
   const success = document.getElementById('formSuccess');
   const submitBtn = form.querySelector('button[type="submit"]');
 
   let valid = true;
 
-  // Name check
   const nameErr = document.getElementById('nameErr');
   if (name.length < 2) {
     nameErr.textContent = 'Please enter your name.';
@@ -145,7 +113,6 @@ form.addEventListener('submit', async (e) => {
     nameErr.textContent = '';
   }
 
-  // Email check
   const emailErr = document.getElementById('emailErr');
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   if (!emailRegex.test(email)) {
@@ -155,7 +122,6 @@ form.addEventListener('submit', async (e) => {
     emailErr.textContent = '';
   }
 
-  // Message check
   const msgErr = document.getElementById('msgErr');
   if (message.length < 10) {
     msgErr.textContent = 'Message must be at least 10 characters.';
@@ -169,7 +135,11 @@ form.addEventListener('submit', async (e) => {
   const originalBtnText = submitBtn.innerHTML;
   submitBtn.disabled = true;
   submitBtn.innerHTML = 'Sending...';
-  success.style.color = '';
+
+  // Reset visibility
+  success.style.display = 'block';
+  success.style.color = '#333';
+  success.textContent = 'Sending your message...';
 
   try {
     const response = await fetch('https://api.web3forms.com/submit', {
@@ -182,22 +152,34 @@ form.addEventListener('submit', async (e) => {
         access_key: WEB3FORMS_ACCESS_KEY,
         name: name,
         email: email,
+        subject: subject || `New message from ${name} — Portfolio Contact Form`,
         message: message,
-        subject: `New message from ${name} — Portfolio Contact Form`,
       }),
     });
 
     const result = await response.json();
 
-    if (result.success) {
+    if (response.ok && result.success) {
+      success.style.display = 'block';
+      success.style.visibility = 'visible';
+      success.style.opacity = '1';
+      success.style.color = '#a3e1bd'; 
+      success.style.marginTop = '15px'; 
       success.textContent = "✅ Message sent! I'll get back to you soon.";
       form.reset();
-      setTimeout(() => { success.textContent = ''; }, 5000);
+
+      setTimeout(() => {
+        success.textContent = '';
+        success.style.display = 'none';
+      }, 5000);
+
     } else {
-      success.style.color = '#ff6b6b';
-      success.textContent = '❌ Something went wrong. Please try again.';
+      console.error('Web3Forms error:', result);
+      success.style.color = '#ff6b6b'; // Red color for error
+      success.textContent = `❌ ${result.message || 'Something went wrong. Please try again.'}`;
     }
   } catch (error) {
+    console.error('Network/fetch error:', error);
     success.style.color = '#ff6b6b';
     success.textContent = '❌ Could not send message. Please try again.';
   } finally {
