@@ -3,17 +3,15 @@
 A modern, animated personal portfolio built with vanilla HTML, CSS, and JavaScript — showcasing my work as a Full Stack MERN Developer.
 
 ## Live Demo
-
+smamanoor.vercel.app
 
 ## Sections
 
-- **Home (Hero)** — intro, typing animation role text, floating photo frame, decorative constellation graphic, and a scroll-down indicator
+- **Home (Hero)** — intro, CV, typing animation role text, floating photo frame, decorative constellation graphic, and a scroll-down indicator
 - **About** — bio, background, and quick info (name, email, location, availability)
 - **Skills** — categorized skill cards: Frontend, Backend, Frameworks & Tools, WordPress, Soft Skills
 - **Services** — 5 offered services with descriptions and CTAs
-- **Marquee Strip** — animated scrolling tech-stack ticker
-- **Featured Projects** — masonry-style showcase of real, live projects with links
-- **Mini Projects** — grid of practice projects (Stopwatch, Calculator, Counter, To-Do App, Form Validator, Weather App)
+- **Featured Projects** — masonry-style showcase of real, live projects with links 
 - **Contact** — contact details, socials, and a working contact form
 - **Footer** — credits
 
