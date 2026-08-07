@@ -262,7 +262,9 @@
         <a href="#contact" class="service-link">Get Started →</a>
       </div>
     </div>
-  </section><!-- ── PROJECTS ── -->
+  </section>
+  
+  <!-- ── PROJECTS ── -->
   <section id="projects">
     <div class="section-header reveal">
       <p class="section-tag">What I've Built</p>
@@ -300,40 +302,43 @@
         <p class="showcase-cat">React. Next.js. TailwindCSS. MongoDB</p>
       </div>
 
-      <!-- 2. Nurfia -->
-      <div class="showcase-item reveal">
-        <div class="showcase-img">
-          <img src="project4.png" alt="Nurfia Screenshot"
-            onerror="this.parentElement.classList.add('fallback'); this.style.display='none'; this.parentElement.innerHTML += '<span class=proj-emoji>👗</span>';" />
-          <div class="showcase-overlay">
-            <a href="https://nurfiastore.vercel.app/" target="_blank" class="overlay-icon" aria-label="Live Site">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                stroke-linejoin="round">
-                <path d="M10 13a5 5 0 007.07 0l1.41-1.41a5 5 0 00-7.07-7.07L10 6" />
-                <path d="M14 11a5 5 0 00-7.07 0l-1.41 1.41a5 5 0 007.07 7.07L14 18" />
-              </svg>
-            </a>
-            <a href="https://github.com/smamanoor79-stack/CodeAlpha_Nurfiastore" target="_blank" class="overlay-icon"
-              aria-label="Source Code">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                stroke-linejoin="round">
-                <polyline points="16 18 22 12 16 6"></polyline>
-                <polyline points="8 6 2 12 8 18"></polyline>
-              </svg>
-            </a>
-          </div>
-        </div>
-        <h3>Nurfia — Full Stack Fashion Store</h3>
-        <p class="showcase-cat">HTML . CSS . Vanilla JS. Node.js . Express</p>
-      </div>
+      <!-- 2. Nurfia (Store + Admin Toggle) -->
+<div class="showcase-item reveal" id="nurfiaCard">
+  <div class="showcase-img">
+    <img id="nurfiaImg" src="project4.png" alt="Nurfia Screenshot"
+      onerror="this.parentElement.classList.add('fallback'); this.style.display='none'; this.parentElement.innerHTML += '<span class=proj-emoji>👗</span>';" />
+    <div class="showcase-overlay">
+      <a id="nurfiaLiveLink" href="https://nurfiastore.vercel.app/" target="_blank" class="overlay-icon" aria-label="Live Site">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M10 13a5 5 0 007.07 0l1.41-1.41a5 5 0 00-7.07-7.07L10 6" />
+          <path d="M14 11a5 5 0 00-7.07 0l-1.41 1.41a5 5 0 007.07 7.07L14 18" />
+        </svg>
+      </a>
+      <a id="nurfiaGithubLink" href="https://github.com/smamanoor79-stack/CodeAlpha_Nurfiastore" target="_blank" class="overlay-icon" aria-label="Source Code">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="16 18 22 12 16 6"></polyline>
+          <polyline points="8 6 2 12 8 18"></polyline>
+        </svg>
+      </a>
+    </div>
+  </div>
 
-      <!-- 3. Landlinger -->
+  <h3 id="nurfiaTitle">Nurfia — Full Stack Fashion Store with Adminpanel</h3>
+  <p class="showcase-cat" id="nurfiaStack">HTML . CSS . Vanilla JS. Node.js . Express. MongoDB</p>
+
+  <div id="nurfiaLinksWrap">
+    <a href="#" class="demo-link" id="nurfiaToggleLink" onclick="toggleNurfiaView(event)">View Admin Panel →</a><br>
+    <a href="#" class="demo-link" id="nurfiaBackLink" onclick="toggleNurfiaView(event)" style="display:none; margin-left: 1.2rem;">← Back to Site</a>
+  </div>
+</div>
+
+      <!-- 3. Chrip App  -->
       <div class="showcase-item reveal">
         <div class="showcase-img">
-          <img src="landing2.webp" alt="Netflix Clone Screenshot"
-            onerror="this.parentElement.classList.add('fallback'); this.style.display='none'; this.parentElement.innerHTML += '<span class=proj-emoji>🎬</span>';" />
+          <img src="project7.png" alt="Chirp Social app Screenshot"
+            onerror="this.parentElement.classList.add('fallback'); this.style.display='none'; this.parentElement.innerHTML += '<span class=proj-emoji>🌐</span>';" />
           <div class="showcase-overlay">
-            <a href="https://landlinger-landingpage.vercel.app/" target="_blank" class="overlay-icon"
+            <a href="https://chirp-app-smama.vercel.app/" target="_blank" class="overlay-icon"
               aria-label="Live Site">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                 stroke-linejoin="round">
@@ -341,7 +346,7 @@
                 <path d="M14 11a5 5 0 00-7.07 0l-1.41 1.41a5 5 0 007.07 7.07L14 18" />
               </svg>
             </a>
-            <a href="https://github.com/smamanoor79-stack/-Landlinger-landingpage" target="_blank" class="overlay-icon"
+            <a href="https://github.com/smamanoor79-stack/chirp-mern.git/" target="_blank" class="overlay-icon"
               aria-label="Source Code">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                 stroke-linejoin="round">
@@ -351,8 +356,8 @@
             </a>
           </div>
         </div>
-        <h3> Landlinger — SaaS Landing Page</h3>
-        <p class="showcase-cat">Next.js. Stripe. Tailwind CSS. FramerMotion</p>
+        <h3>Chirp — Twitter style app</h3>
+        <p class="showcase-cat"> MERN Stack</p>
       </div>
 
 
@@ -385,13 +390,13 @@
         <a href="#contact" class="demo-link">Request demo access →</a>
       </div>
 
-      <!-- 5. Nurfia Adminpanel  -->
+      <!-- 5. Landlinger -->
       <div class="showcase-item reveal">
         <div class="showcase-img">
-          <img src="nurfiaadmin.png" alt="Adminpanel Screenshot"
-            onerror="this.parentElement.classList.add('fallback'); this.style.display='none'; this.parentElement.innerHTML += '<span class=proj-emoji>🌐</span>';" />
+          <img src="landing2.webp" alt="Netflix Clone Screenshot"
+            onerror="this.parentElement.classList.add('fallback'); this.style.display='none'; this.parentElement.innerHTML += '<span class=proj-emoji>🎬</span>';" />
           <div class="showcase-overlay">
-            <a href="https://nurfiaadmin.vercel.app/" target="_blank" class="overlay-icon"
+            <a href="https://landlinger-landingpage.vercel.app/" target="_blank" class="overlay-icon"
               aria-label="Live Site">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                 stroke-linejoin="round">
@@ -399,7 +404,7 @@
                 <path d="M14 11a5 5 0 00-7.07 0l-1.41 1.41a5 5 0 007.07 7.07L14 18" />
               </svg>
             </a>
-            <a href="https://github.com/smamanoor79-stack/CodeAlpha_Nurfiastore/" target="_blank" class="overlay-icon"
+            <a href="https://github.com/smamanoor79-stack/-Landlinger-landingpage" target="_blank" class="overlay-icon"
               aria-label="Source Code">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                 stroke-linejoin="round">
@@ -409,10 +414,10 @@
             </a>
           </div>
         </div>
-        <h3>Nurfia — AdminPanel</h3>
-        <p class="showcase-cat"> HTML. CSS . Vanilla JS. Node.js . Express</p>
-        <a href="#contact" class="demo-link">Request demo access →</a>
+        <h3> Landlinger — SaaS Landing Page</h3>
+        <p class="showcase-cat">Next.js. Stripe. Tailwind CSS. FramerMotion</p>
       </div>
+
 
       <!-- 6. Mantu -->
       <div class="showcase-item reveal">
