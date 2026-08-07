@@ -89,6 +89,53 @@ window.addEventListener('scroll', () => {
   });
 });
 
+// ── NURFIA STORE ↔ ADMIN TOGGLE ──
+const nurfiaData = {
+  store: {
+    img: "project4.png",
+    title: "Nurfia — Full Stack Fashion Store",
+    stack: "HTML . CSS . Vanilla JS. Node.js . Express",
+    liveLink: "https://nurfiastore.vercel.app/",
+    githubLink: "https://github.com/smamanoor79-stack/CodeAlpha_Nurfiastore"
+  },
+  admin: {
+    img: "nurfiaadmin.png",
+    title: "Nurfia — AdminPanel",
+    stack: "HTML . CSS . Vanilla JS. Node.js . Express",
+    liveLink: "https://nurfiaadmin.vercel.app/",
+    githubLink: "https://github.com/smamanoor79-stack/CodeAlpha_Nurfiastore/"
+  }
+};
+
+let nurfiaShowingAdmin = false;
+
+function toggleNurfiaView(e) {
+  e.preventDefault();
+  nurfiaShowingAdmin = !nurfiaShowingAdmin;
+  const data = nurfiaShowingAdmin ? nurfiaData.admin : nurfiaData.store;
+
+  document.getElementById('nurfiaImg').src = data.img;
+  document.getElementById('nurfiaTitle').textContent = data.title;
+  document.getElementById('nurfiaStack').textContent = data.stack;
+  document.getElementById('nurfiaLiveLink').href = data.liveLink;
+  document.getElementById('nurfiaGithubLink').href = data.githubLink;
+
+  const toggleLink = document.getElementById('nurfiaToggleLink');
+  const backLink = document.getElementById('nurfiaBackLink');
+
+  if (nurfiaShowingAdmin) {
+    toggleLink.textContent = "Request demo access →";
+    toggleLink.setAttribute('onclick', '');
+    toggleLink.href = "#contact";
+    backLink.style.display = "inline-block";
+  } else {
+    toggleLink.textContent = "View Admin Panel →";
+    toggleLink.setAttribute('onclick', 'toggleNurfiaView(event)');
+    toggleLink.href = "#";
+    backLink.style.display = "none";
+  }
+}
+
 // ── 7. CONTACT FORM VALIDATION ──
 const form = document.getElementById('contactForm');
 const WEB3FORMS_ACCESS_KEY = '75fbd070-f316-48a3-9e71-7a0289e43e52';
